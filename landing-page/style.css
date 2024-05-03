@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Radio+Canada:ital,wght@0,300..700;1,300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: #0066FF;
+    margin: 0;
+    min-height: 100vh;
+}
+header{
+    width: 100%;
+}
+nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.sacramento{
+    font-family: 'Sacramento',cursive;
+    color: white;
+    font-weight: 400;
+    font-size: 40px;
+}
+.desk-menu{
+    display: flex;
+}
+.desk-menu>li{
+    list-style: none;
+    color: white;
+    font-family: 'Radio Canada',sans-serif; 
+    font-size: 16px;
+    margin: 0px 32px;
+    cursor: pointer;
+}
+.cta-btn{
+    font-family: 'Radio Canada',sans-serif; 
+    color: white;
+    background-color: rgba(255, 255, 255, .15);
+    border: none;
+    outline: none;
+    padding: 12px 24px;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 1s;
+}
+.cta-btn:hover{
+    box-shadow: 2px 1px 8px #0000003d;
+}
+.hero-content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.hero-content>h1{
+    font-size: 46px;
+    font-family: 'Baloo Bhai 2',sans-serif;
+    font-weight: 700;
+    color: white;
+    margin-top: 16px;
+    margin-bottom: 0;
+    text-align: center;
+}
+.hero-content>h1>span{
+    color: #FFC225;
+}
+.hero-content>p{
+    color: white;
+    font-family: 'Radio Canada',sans-serif; 
+    font-size: 16px;
+    text-align: center;
+}
+.display-block{
+    display: block;
+}
+.d-none{
+    display: none;
+}
+.hero-bottom{
+    padding-top: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.features-container{
+    padding-left: 4px;
+    border-left: 3px solid white;
+    height:fit-content;
+}
+.features{
+    width: 200px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin: 24px;
+}
+.features>h3{
+    font-family: 'Baloo Bhai 2',sans-serif;
+    font-weight: 700;
+    color: #FFC225;
+    font-size: 24px;
+    margin: 4px 0px;
+}
+.features>h5{
+    color: white;
+    font-family: 'Radio Canada',sans-serif; 
+    font-size: 14px;
+    margin: 0px;
+    font-weight: 400;
+}
+.hero-img{
+    position: relative;
+}
+.hero-img>img{
+    width: 320px;
+    z-index: 2;
+}
+.hero-img::after{
+    content: "";
+    width: 500px;
+    height: 250px;
+    position: absolute;
+    background-image: url(./assets/overlay.png);
+    background-size: cover;
+    left: 50%;
+    bottom: 20%;
+    transform: translateX(-50%);
+    z-index: -1 !important;
+}
+.download{
+    display: flex;
+    width: auto;
+    align-items: center;
+    margin: 20px;
+    background-color: rgba(255, 255, 255, .15);
+    padding: 12px 24px;
+    border-radius: 24px;
+}
+.download>img{
+    width: 24px;
+    height: 24px;
+    margin-right: 12px;
+}
+.download>div{
+    color: white;
+    font-family: 'Radio Canada',sans-serif; 
+}
+.download>div>h4{
+    font-weight: 400;
+    margin: 6px auto;
+    font-size: 12px;
+}
+.download>div>h3{
+    font-weight: 500;
+    font-size: 14px;
+    margin: 0px;
+}
+@media screen and (max-width:768px) {
+    .desk-menu{
+        display: none;
+    }
+    .hero-content>h1{
+        font-size: 36px;
+    }
+    .hero-content>p{
+        font-size: 12px;
+    }
+    .hero-bottom{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 50px;
+        overflow-x: hidden;
+    }
+    .features-container{
+        display: flex;
+        border-right: 3px solid white;
+    }
+    .features{
+        margin: 12px;
+        width: 120px;
+    }
+    .hero-img>img{
+        width: 280px;
+    }
+    .hero-img::after{
+        content: "";
+        width: 400px;
+        height: 200px;
+        position: absolute;
+        background-image: url(./assets/overlay.png);
+        background-size: cover;
+        left: 50%;
+        bottom: 20%;
+        transform: translateX(-50%);
+        z-index: -1 !important;
+    }
+    .download-container{
+        display: flex;
+    }
+    .download{
+        margin: 4px;
+        padding: 8px 24px;
+    }
+    .download>div>h3{
+        margin: 4px;
+    }
+}
