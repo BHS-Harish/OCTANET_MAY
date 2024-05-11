@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Task | TodoBee</title>
+    <meta title="theme-color" content="#0C0C0C"/>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        #gobackBtn {
+            width: 120px;
+            background-color: #0C0C0C;
+            border: none;
+            outline: none;
+            color: #FF6000;
+            font-size: 16px;
+            height: 32px;
+            margin: 12px 0px;
+            font-weight: 600;
+        }
+
+        main {
+            width: 100%;
+            height: 80%;
+            padding-top: 90px !important;
+        }
+
+        main>p {
+            text-align: center;
+            font-size: 20px;
+        }
+
+        nav {
+            background-color: #0C0C0C;
+        }
+
+        section {
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        form {
+            width: 300px;
+            padding: 28px 24px;
+            box-sizing: border-box;
+            box-shadow: 0px 0px 5px #ff6200cd;
+            border-radius: 12px;
+        }
+
+        label {
+            font-size: 12px;
+        }
+
+        input,
+        select {
+            margin-bottom: 16px !important;
+        }
+
+        input {
+            width: 94%;
+            padding: 4px 8px;
+            outline: none;
+            font-size: 16px;
+            margin: 4px 0px;
+        }
+
+        select {
+            width: 100%;
+            font-size: 16px;
+            padding: 4px 4px;
+            margin: 4px 0px;
+        }
+
+        button {
+            width: 100%;
+            padding: 8px 0px;
+            background-color: #FF6000;
+            outline: none;
+            border: none;
+            font-weight: 600;
+            border-radius: 16px;
+            margin-top: 8px;
+        }
+    </style>
+    <script>
+        function taskSubmission(event) {
+            event.preventDefault()
+            var taskName = document.getElementById("taskname").value;
+            var category = document.getElementById("category").value;
+            var priority = document.getElementById("priority").value;
+            var dueDate = document.getElementById("duedate").value;
+            console.log(category)
+            if (taskName.trim()!="" && category!="" && priority!=""){
+                var todos=JSON.parse(localStorage.getItem("todobee"))||[]
+                var todo={taskName,category,priority,dueDate,isCompleted:false}
+                todos.push(todo)
+                localStorage.setItem("todobee",JSON.stringify(todos))
+                alert("Task added")
+                window.open("./index.html","_self")
+            }
+            else
+                alert("Please provide all details")
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <nav class="nav">
+            <button id="gobackBtn">Go Back</button>
+            <h1>TodoBee</h1>
+        </nav>
+    </header>
+    <main>
+        <p>Add your new task here</p>
+        <section>
+            <form method="post" onsubmit="taskSubmission(event)">
+                <label for="taskname">Task name</label><br />
+                <input type="text" name="task" id="taskname" required />
+                <label for="category">Category</label><br />
+                <select id="category" required>
+                    <option value="Home">Home</option>
+                    <option value="Career">Career</option>
+                    <option value="Sport">Sport</option>
+                    <option value="Health">Health</option>
+                    <option value="Rest">Rest</option>
+                    <option value="Education">Education</option>
+                </select>
+                <label for="priority">Priority</label><br />
+                <select id="priority" required>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select>
+                <label for="duedate">Due date</label><br />
+                <input type="date" name="duedate" id="duedate" required />
+                <button type="submit">Add task</button>
+            </form>
+        </section>
+    </main>
+</body>
+<script>
+    document.getElementById("gobackBtn").addEventListener('click', () => {
+        window.open('./index.html', '_self')
+
+    })
+</script>
+
+</html>

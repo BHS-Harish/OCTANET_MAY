@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TodoBee</title>
+    <meta title="theme-color" content="#0C0C0C"/>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="nav">
+            <svg id="menu-open-icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="36" height="36"
+                viewBox="0 0 48 48">
+                <path fill="#FF6000" d="M6 22H42V26H6zM6 10H42V14H6zM6 34H42V38H6z"></path>
+            </svg>
+            <h1>TodoBee</h1>
+        </nav>
+    </header>
+    <main>
+        <aside id="sidebar">
+            <svg id="menu-close-icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="36" height="36" viewBox="0 0 64 64">
+                <path fill="#FF6000"
+                    d="M 12 8 L 8 12 L 24.666016 32 L 8 52 L 12 56 L 32 39.333984 L 52 56 L 56 52 L 39.333984 32 L 56 12 L 52 8 L 32 24.666016 L 12 8 z">
+                </path>
+            </svg>
+            <button id="addTaskBtn">+ Add New Task</button>
+            <div class="sidebar-btn-container">
+                <button id="allTasks">All Tasks</button>
+                <button id="completedTasks">Completed</button>
+                <button id="pendingTasks">Pending</button>
+                <button id="expiredTasks">Expired</button>
+            </div>
+        </aside>
+        <section id="section">
+            <div class="filter-container">
+                <label>Filter</label>
+                <select id="category" required>
+                    <option value="All">All</option>
+                    <option value="Home">Home</option>
+                    <option value="Career">Career</option>
+                    <option value="Sport">Sport</option>
+                    <option value="Health">Health</option>
+                    <option value="Rest">Rest</option>
+                    <option value="Education">Education</option>
+                </select>
+                <select id="priority" required>
+                    <option value="All">All</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select>
+            </div>
+            <div id="tasks-container">
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Copyright @ <span id="year"></span> TodoBee</p>
+        <p>A product of <a href="https://balaharisankar.netlify.app" target="_blank">BHS</a></p>
+    </footer>
+</body>
+<script src="./script.js"></script>
+
+</html>

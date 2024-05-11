@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+    background-color: #0C0C0C;
+    color: #FF6000;
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    user-select: none;
+}
+/* Header Section Start */
+header{
+    width: 100%;
+    position: fixed;
+    z-index: 500;
+}
+.nav{
+    width: 100%;
+    padding: 20px 30px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0C0C0C;
+}
+#menu-open-icon{
+    cursor: pointer;
+}
+/* Header section ends */
+
+main{
+    width: 100%;
+    min-height: 100%;
+}
+
+/* Side Menu Bar */
+
+aside{
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    background-color: #0C0C0C;
+    box-shadow: 1px 2px 4px #ff62009b;
+    transition: 1s;
+    border-radius: 0px 12px 12px 0px;
+    box-sizing: border-box;
+    padding: 80px 20px !important;
+    transform: translateX(-250px);
+    z-index: 1000;
+}
+#menu-close-icon{
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    cursor: pointer;
+}
+#section{
+    width: 100%;
+    height: 100%;
+    padding-top: 80px;
+}
+button{
+    cursor: pointer;
+}
+#addTaskBtn{
+    width: 100%;
+    background-color: #FF6000;
+    border: none;
+    outline: none;
+    height: 36px;
+    border-radius: 20px;
+    color: black;
+    font-weight: 600;
+}
+.sidebar-btn-container{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+.sidebar-btn-container>button{
+    width: 100%;
+    background-color: #0C0C0C;
+    border: none;
+    outline: none;
+    color: #FF6000;
+    font-size: 16px;
+    height: 32px;
+    margin: 12px auto;
+    font-weight: 600;
+}
+
+/* Section starts */
+.filter-container{
+    width: 100%;
+    padding: 30px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.filter-container>select{
+    width: 120px;
+    padding: 8px 12px;
+    background-color: #FF6000;
+    border: none;
+    outline: none;
+    border-radius: 16px;
+    margin: 0px 12px;
+}
+label{
+    color: #FF6000;
+    margin: 0px 12px;
+}
+#tasks-container{
+    width: 100%;
+    padding: 30px 30px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+    gap: 32px;
+}
+.todo-container{
+    min-width: 300px;
+    width: 300px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    background-color: #0C0C0C;
+    border: 1px solid #fff;
+    position: relative;
+    border-radius: 12px;
+}
+.category-container{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+.category-container>p{
+    width: fit-content;
+    padding: 4px 8px;
+    background-color: yellow;
+    font-size: 12px;
+    color: black;
+    font-weight: 600;
+    border-radius: 12px;
+}
+.taskName{
+    color: white;
+    font-size: 16px;
+    margin: 12px 0px;
+}
+.dueDate{
+    font-size: 12px;
+    color: yellow;
+}
+.isCompleted{
+    font-size: 12px;
+    color: yellow;
+}
+.priority{
+    color: #0C0C0C;
+    border-radius: 20px;
+    font-weight: bold;
+    padding: 3px 8px;
+    width: fit-content;
+    font-size: 8px;
+    background-color: white;
+}
+.deleteBtn{
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    background-color: red;
+    border: none;
+    outline: none;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 4px;
+}
+.markAsDoneBtn{
+    border-radius: 4px;
+    position: absolute;
+    right: 50px;
+    bottom: 15px;
+    background-color: yellow;
+    border: none;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 4px;
+}
+footer{
+    padding: 10px 0px;
+}
+footer>p{
+    text-align: center;
+    font-size: 14px;
+}
+footer>p:last-child{
+    color: white;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+@media screen and (max-width:768px) {
+    #tasks-container{
+        justify-content: center;
+    }
+}
